@@ -1,0 +1,998 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Từ vựng Collocation- Lớp Anh thầy Kết</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #fff8f0;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+  }
+
+ header {
+  background-color: #ffd6ba;
+  padding: 15px 20px;
+  font-weight: bold;
+  color: #7a4e3e;
+  display: flex;
+  flex-wrap: wrap;       
+  align-items: center;
+  justify-content: space-between;  /* Left luôn bên trái, center căn giữa */
+  gap: 15px;
+}
+
+/* Left: icon + home text */
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex: 0 0 auto;          /* không bị co lại */
+}
+
+.header-left a {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 24px;
+  color: #7a4e3e;
+  text-decoration: none;
+}
+
+.header-left a i {
+  font-size: 28px;
+}
+
+/* Center title */
+header {
+  position: relative;
+}
+
+.header-center {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  font-size: 32px;
+  margin: 0;
+  white-space: nowrap;
+}
+/* ===== TOP SELECT ===== */
+.top-select {
+  display: flex;
+  justify-content: flex-start;
+  margin: 20px 40px;
+}
+
+select {
+  padding: 8px 14px;
+  font-size: 18px;
+  border-radius: 8px;
+  border: 2px solid #a0e7e5;
+  background-color: #e3fdfd;
+}
+
+
+
+/* MEDIA QUERY cho điện thoại */
+@media (max-width: 480px) {
+
+    .header-center {
+    flex-basis: 100%;
+    order: 2;
+    text-align: center;
+    position: static;
+    transform: none;
+    margin-top: 8px;
+  }
+
+  .header-left {
+    order: 1;
+  }
+}
+
+  header {
+    padding: 10px 15px;
+  }
+  .header-left a {
+    font-size: 18px;
+  }
+  .header-left a i {
+    font-size: 20px;
+  }
+  .header-center {
+    font-size: 22px;
+  }
+}
+
+
+  .top-select {
+    display: flex;
+    justify-content: flex-start;
+    margin: 20px 40px;
+  }
+
+  select {
+    padding: 8px 14px;
+    font-size: 18px;
+    border-radius: 8px;
+    border: 2px solid #a0e7e5;
+    background-color: #e3fdfd;
+  }
+
+  /* Word list */
+  .word-list {
+    width: 85%;
+    margin: 20px auto;
+    background-color: #E0FBE2;
+    border-radius: 10px;
+    padding: 15px;
+    text-align: left;
+    font-size: 22px;
+  }
+
+.word-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 6px 10px;
+  border-bottom: 1px dashed #ffb3ba;
+  transition: background-color .15s ease-in-out;
+}
+.word-row:last-child { border-bottom: none; }
+
+/* Hover đổi màu */
+.word-row:hover {
+  background-color: #fffacd; /* xanh nhạt dễ thấy */
+  cursor: pointer;
+}
+
+  /* Ôn tập */
+  .review-box {
+    margin: 40px auto;
+    width: 70%;
+    background-color: #ffe5ec;
+    padding: 25px;
+    font-weight: bold;
+    color: #607274;
+    font-size: 26px;
+    border-radius: 12px;
+    position: relative;
+  }
+  .review-buttons {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  gap: 15px;
+}
+.review-buttons button {
+  background-color: #a0e7e5;
+  border: none;
+  padding: 12px 20px;
+  font-size: 20px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.review-buttons button:hover {
+  background-color: #ffb3ba;
+}
+
+
+  /* Bài tập */
+  .exercise {
+    width: 80%;
+    margin: 0 auto 30px auto;
+    font-size: 22px;
+    text-align: left;
+  }
+
+  .exercise input {
+    width: 220px;
+    font-size: 20px;
+    padding: 5px;
+    margin-left: 10px;
+    border-radius: 6px;
+  }
+
+  .exercise button {
+    margin-left: 10px;
+    padding: 6px 12px;
+    font-size: 18px;
+    background-color: #a0e7e5;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+  }
+
+  .exercise button:hover {
+    background-color: #ffb3ba;
+  }
+
+  .result {
+    font-weight: bold;
+    color: #C5705D;
+    font-size: 20px;
+    margin-left: 10px;
+  }
+
+  footer {
+    font-size: 22px;
+    margin-top: 40px;
+    padding: 20px;
+    color: #7a4e3e;
+    background-color: #fff0e1;
+  }
+
+  .confetti {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 10px;
+    height: 10px;
+    background: red;
+    opacity: .9;
+    animation: pop .9s ease-out forwards;
+  }
+  @keyframes pop {
+    0% { transform: translate(0,0) scale(1); opacity:1;}
+    50% {transform: translate(calc(var(--x)*.5),calc(var(--y)*.4)) scale(1.1);opacity:1;}
+    100% {transform: translate(var(--x),var(--y)) scale(.5);opacity:0;}
+  }
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="header-left">
+    <a href="https://ketng91.github.io/TuvungTHPTQG-homepage/">
+      <i class="fa-solid fa-house"></i> Lớp Anh thầy Kết
+    </a>
+  </div>
+  <div class="header-center">
+    Từ vựng Collocation
+  </div>
+</header>
+
+<!-- Bộ chọn -->
+<div class="top-select">
+  <select id="wordList">
+    <option value="1">Từ vựng Collocation - BREAK</option>
+    <option value="2">Từ vựng Collocation - BRING</option>
+    <option value="3">Từ vựng Collocation - DO</option>
+    <option value="4">Từ vựng Collocation - EARN</option>
+    <option value="5">Từ vựng Collocation - GET</option>
+    <option value="6">Từ vựng Collocation - GIVE</option>
+    <option value="7">Từ vựng Collocation - GO</option>
+    <option value="8">Từ vựng Collocation - HAVE</option>
+    <option value="9">Từ vựng Collocation - KEEP</option>
+    <option value="10">Từ vựng Collocation - LEND</option>
+    <option value="11">Từ vựng Collocation - LOSE</option>
+    <option value="12">Từ vựng Collocation - MAKE</option>
+    <option value="13">Từ vựng Collocation - MEET</option>
+    <option value="14">Từ vựng Collocation - MISS</option>
+    <option value="15">Từ vựng Collocation - PAY</option>
+    <option value="16">Từ vựng Collocation - PUT</option>
+    <option value="17">Từ vựng Collocation - SET</option>
+    <option value="18">Từ vựng Collocation - TAKE</option>
+
+
+  </select>
+</div>
+
+
+
+<script>
+// Bắt sự kiện Enter cho tất cả các ô input trong bài tập
+document.addEventListener("DOMContentLoaded", function() {
+  const exerciseInputs = document.querySelectorAll(".exercise input");
+
+  exerciseInputs.forEach(input => {
+    input.addEventListener("keydown", function(e) {
+      if (e.key === "Enter") {      // Kiểm tra nếu nhấn Enter
+        e.preventDefault();          // Ngăn việc xuống dòng mặc định
+        const checkBtn = this.nextElementSibling; // giả định nút Check ngay sau input
+        if (checkBtn && checkBtn.tagName === "BUTTON") {
+          checkBtn.click();         // kích hoạt nút Check
+        }
+      }
+    });
+  });
+});
+</script>
+
+
+
+<!-- Danh sách từ vựng -->
+<div class="word-list" id="wordContainer"></div>
+
+<!-- Ôn tập -->
+<div class="review-box">
+<div id="progressCounter"
+     style="position:absolute; top:12px; right:18px;
+            font-size:18px; color:#7a4e3e;">
+  Đã biết 0 / 0
+</div>
+
+
+  <div id="vietWord">Chọn Bộ từ vựng để bắt đầu</div>
+    
+  <!-- Hiển thị đáp án -->
+<div id="answer" style="font-size:22px;color:#7a4e3e; margin-top:15px; text-align:center; min-height:40px;"></div>
+   
+  <!-- Nút bấm -->
+  <div class="review-buttons" style="margin-top:20px;">
+    <button onclick="know()">Đã biết</button>
+    <button onclick="dontKnow()">Chưa biết</button>
+    <button onclick="nextWord()">Tiếp theo</button>
+  </div>
+
+</div>
+
+<!-- Bài tập -->
+<div class="exercise" id="exercise"></div>
+
+<footer>Chúc mừng bạn đã hoàn thành bài học!</footer>
+<script>
+const selectEl = document.getElementById("wordList");
+
+function sortOptionsByNumber() {
+  const opts = Array.from(selectEl.options);
+
+  opts.sort((a, b) => {
+    return Number(a.value) - Number(b.value);
+  });
+
+  selectEl.innerHTML = "";
+  opts.forEach(o => selectEl.appendChild(o));
+}
+
+// sort ngay khi load
+sortOptionsByNumber();
+
+// sort lại khi mở dropdown
+selectEl.addEventListener("mousedown", sortOptionsByNumber);
+selectEl.addEventListener("touchstart", sortOptionsByNumber);
+</script>
+
+<script>
+/********** DATA **********/
+const data = {
+  1: [
+  { en: "break (fresh/new) ground /breɪk ɡraʊnd/", vn: "khám phá mới; mở ra hướng đi mới", tick: false },
+  { en: "break (one's) neck /breɪk nek/", vn: "cố gắng hết sức (thường để làm gì đó nhanh)", tick: false },
+  { en: "break out in(to) tears /breɪk aʊt/", vn: "bật khóc nức nở", tick: false },
+  { en: "break a code/cipher /breɪk ə kəʊd/", vn: "giải mã/phá mã", tick: false },
+
+  { en: "break a contract /breɪk ə ˈkɒntrækt/", vn: "phá vỡ/vi phạm hợp đồng", tick: false },
+  { en: "break a habit /breɪk ə ˈhæbɪt/", vn: "từ bỏ một thói quen", tick: false },
+  { en: "break a law / the rules /breɪk ə lɔː/", vn: "vi phạm pháp luật/quy định", tick: false },
+  { en: "break a promise /breɪk ə ˈprɒmɪs/", vn: "thất hứa; không giữ lời", tick: false },
+
+  { en: "break a leg /breɪk ə leɡ/", vn: "chúc may mắn (thành ngữ dùng trước khi biểu diễn)", tick: false },
+  { en: "break a record /breɪk ə ˈrekɔːd/", vn: "phá kỷ lục", tick: false },
+  { en: "break an appointment /breɪk ən əˈpɔɪntmənt/", vn: "lỡ hẹn/hủy cuộc hẹn", tick: false },
+  { en: "break down barriers /breɪk daʊn ˈbæriəz/", vn: "phá vỡ rào cản", tick: false },
+
+  { en: "break even /breɪk ˈiːvn/", vn: "hòa vốn (trong kinh doanh)", tick: false },
+  { en: "break free (from) /breɪk friː/", vn: "trốn thoát/thoát khỏi sự kiềm tỏa", tick: false },
+  { en: "break one’s journey /breɪk wʌnz ˈdʒɜːni/", vn: "tạm dừng cuộc hành trình", tick: false },
+  { en: "break sb's concentration /ˌkɒnsnˈtreɪʃn/", vn: "làm ai đó mất tập trung", tick: false },
+
+  { en: "break someone's heart /breɪk hɑːrt/", vn: "làm tan nát trái tim ai", tick: false },
+  { en: "break the deadlock /breɪk ðə ˈdedlɒk/", vn: "phá vỡ thế bế tắc", tick: false },
+  { en: "break the ice /breɪk ðə aɪs/", vn: "phá vỡ sự ngại ngùng (khi mới gặp)", tick: false },
+  { en: "break the internet /breɪk ðə ˈɪntənet/", vn: "gây sốt mạng xã hội", tick: false },
+
+  { en: "break the mould /breɪk ðə məʊld/", vn: "phá bỏ khuôn mẫu/cách làm cũ kỹ", tick: false },
+  { en: "break the news to sb /breɪk ðə njuːz/", vn: "thông báo tin (thường là tin buồn) cho ai", tick: false },
+  { en: "break the silence /breɪk ðə ˈsaɪləns/", vn: "phá vỡ bầu không khí im lặng", tick: false },
+  { en: "break the spell /breɪk ðə spel/", vn: "giải bùa chú/làm mất đi sự mê hoặc", tick: false },
+
+  { en: "break into pieces /breɪk ˈɪntə ˈpiːsɪz/", vn: "vỡ vụn thành từng mảnh", tick: false },
+  { en: "break the skin /breɪk ðə skɪn/", vn: "làm rách da/xây xát da", tick: false },
+  { en: "break the strike /breɪk ðə straɪk/", vn: "phá vỡ cuộc đình công", tick: false }
+  ],
+  2: [
+  { en: "bring charges/legal action/proceedings/a lawsuit/a court case/a prosecution/a claim against sb", vn: "kiện ai đó ra tòa; khởi tố; tiến hành tố tụng", tick: false },
+  { en: "bring an end to / bring sth to an end", vn: "chấm dứt cái gì; làm cho cái gì kết thúc", tick: false },
+  { en: "bring home the bacon /briŋ həʊm ðə ˈbeɪkən/", vn: "kiếm tiền nuôi gia đình (thành ngữ)", tick: false },
+  { en: "bring tears to one's eyes", vn: "làm cho ai đó cảm động đến phát khóc", tick: false },
+  { en: "bring many changes", vn: "mang lại nhiều sự thay đổi", tick: false },
+  { en: "bring peace to /briŋ piːs tuː/", vn: "mang lại hòa bình cho (một nơi nào đó)", tick: false },
+  { en: "bring to one’s attention", vn: "làm cho ai đó lưu ý/chú ý đến cái gì", tick: false }
+  ],
+
+  3: [
+  { en: "do (some/a lot of...) work /duː wɜːrk/", vn: "làm việc", tick: false },
+  { en: "do a course /duː ə kɔːrs/", vn: "theo học một khóa học", tick: false },
+  { en: "do a deal /duː ə diːl/", vn: "thực hiện một thỏa thuận/giao dịch", tick: false },
+  { en: "do a degree in sth /duː ə dɪˈɡriː/", vn: "học để lấy bằng cử nhân về ngành...", tick: false },
+  { en: "do a good/bad job of sth", vn: "làm tốt/tệ một việc gì đó", tick: false },
+  { en: "do a project on sth /duː ə ˈprɒdʒekt/", vn: "làm một dự án về cái gì", tick: false },
+  { en: "do an experiment /duː ən ɪkˈsperɪmənt/", vn: "làm thí nghiệm", tick: false },
+  { en: "do an impression of sb/sth", vn: "bắt chước điệu bộ/giọng nói của ai", tick: false },
+
+  { en: "do business with sb/sth", vn: "làm ăn/kinh doanh với ai", tick: false },
+  { en: "do crosswords /duː ˈkrɒswɜːdz/", vn: "giải ô chữ", tick: false },
+  { en: "do exercises / gymnastics / yoga", vn: "tập thể dục / tập thể dục dụng cụ / tập yoga", tick: false },
+  { en: "do harm to / do good to", vn: "gây hại cho / có lợi cho", tick: false },
+  { en: "do homework / housework", vn: "làm bài tập về nhà / làm việc nhà", tick: false },
+
+  { en: "do honor to sb / do sb an honor", vn: "vinh danh ai / làm rạng danh cho ai", tick: false },
+  { en: "do one's best /duː wʌnz best/", vn: "cố gắng hết sức mình", tick: false },
+  { en: "do one's duty /duː wʌnz ˈdjuːti/", vn: "làm tròn bổn phận/nhiệm vụ", tick: false },
+  { en: "do one's makeup / hair / nails", vn: "trang điểm / làm tóc / làm móng", tick: false },
+  { en: "do research /duː rɪˈsɜːrtʃ/", vn: "làm nghiên cứu", tick: false },
+
+  { en: "do sb a favor /duː ˈfeɪvər/", vn: "giúp đỡ ai một việc gì đó", tick: false },
+  { en: "do sb a good turn", vn: "làm việc tốt cho ai đó", tick: false },
+  { en: "do sb good / do sb wrong", vn: "có lợi cho ai / làm điều sai trái với ai", tick: false },
+  { en: "do sport / workout", vn: "chơi thể thao / tập thể hình", tick: false },
+  { en: "do sth for a living", vn: "làm nghề gì để kiếm sống", tick: false },
+  { en: "do sums /duː sʌmz/", vn: "làm các phép tính toán", tick: false },
+
+  { en: "do the cleaning / cooking / dishes", vn: "dọn dẹp / nấu ăn / rửa bát", tick: false },
+  { en: "do the ironing / washing / laundry", vn: "ủi đồ / giặt giũ", tick: false },
+  { en: "do the shopping /duː ðə ˈʃɒpɪŋ/", vn: "đi mua sắm", tick: false },
+  { en: "do the flowers /duː ðə ˈflaʊərz/", vn: "cắm hoa", tick: false },
+  { en: "do the needful", vn: "làm những việc cần thiết", tick: false },
+  { en: "do time /duː taɪm/", vn: "đi tù / thụ án", tick: false },
+
+  { en: "do well/badly by sb", vn: "đối đãi tốt/tệ với ai đó", tick: false },
+  { en: "do/cause damage to sb/sth", vn: "gây thiệt hại cho ai/cái gì", tick: false },
+  { en: "you would do well to V", vn: "bạn nên làm gì (lời khuyên)", tick: false },
+  { en: "do (acting, writing, etc.)", vn: "thực hiện các hoạt động (diễn xuất, viết lách...)", tick: false },
+  { en: "do a drawing/painting/sketch", vn: "vẽ một bức tranh/bản phác thảo", tick: false },
+  { en: "do drugs /duː drʌɡz/", vn: "sử dụng ma túy", tick: false }
+  ],
+
+  4: [
+  { en: "earn a degree (in sth) /ɜːrn ə dɪˈɡriː/", vn: "lấy được/giành được bằng cấp (về lĩnh vực...)", tick: false },
+  { en: "earn a fortune /ɜːrn ə ˈfɔːrtʃən/", vn: "kiếm được cả một gia tài/rất nhiều tiền", tick: false },
+  { en: "earn a living / an income / a wage / a salary", vn: "kiếm sống / kiếm thu nhập / tiền công / tiền lương", tick: false },
+  { en: "earn a reputation / the right", vn: "có được danh tiếng / giành được quyền làm gì", tick: false },
+
+  { en: "earn sth from sth /ɜːrn/", vn: "kiếm được cái gì từ cái gì (ví dụ: kiếm tiền từ việc bán hàng)", tick: false },
+  { en: "earn commission /ɜːrn kəˈmɪʃn/", vn: "hưởng tiền hoa hồng", tick: false },
+  { en: "earn interest /ɜːrn ˈɪntrəst/", vn: "thu được tiền lãi (từ ngân hàng/đầu tư)", tick: false },
+  { en: "earn points / profit", vn: "tích điểm / thu lợi nhuận", tick: false },
+
+  { en: "earn the admiration / respect of sb", vn: "giành được sự ngưỡng mộ / tôn trọng của ai", tick: false },
+  { en: "earn one’s keep", vn: "làm việc để chi trả cho chi phí sinh hoạt của bản thân", tick: false },
+  { en: "earn/win one’s spurs", vn: "thể hiện năng lực để có được địa vị/sự công nhận", tick: false },
+  { en: "earn one's stripes", vn: "xứng đáng với vị trí/cấp bậc nhờ nỗ lực và kinh nghiệm", tick: false },
+  { en: "earn a/one’s crust", vn: "kiếm đủ tiền để sống/kiếm miếng ăn (thành ngữ)", tick: false }
+  ],
+
+  5: [
+  { en: "get a call /ɡet ə kɔːl/", vn: "nhận được một cuộc điện thoại", tick: false },
+  { en: "get a chance /ɡet ə tʃɑːns/", vn: "có cơ hội (làm gì)", tick: false },
+  { en: "get a job /ɡet ə dʒɒb/", vn: "kiếm được việc làm", tick: false },
+  { en: "get a joke /ɡet ə dʒəʊk/", vn: "hiểu được một câu đùa", tick: false },
+  { en: "get a sense of something", vn: "cảm nhận được/hiểu sơ qua về cái gì", tick: false },
+
+  { en: "get divorced /ɡet dɪˈvɔːrst/", vn: "ly hôn", tick: false },
+  { en: "get dressed / undressed", vn: "mặc quần áo / cởi quần áo", tick: false },
+  { en: "get drunk /ɡet drʌŋk/", vn: "bị say rượu", tick: false },
+  { en: "get married /ɡet ˈmærid/", vn: "kết hôn", tick: false },
+  { en: "get pregnant /ɡet ˈpreɡnənt/", vn: "có thai", tick: false },
+
+  { en: "get going / moving", vn: "bắt đầu đi/khởi hành; bắt tay vào làm", tick: false },
+  { en: "get help / information / permission", vn: "nhận được sự giúp đỡ / thông tin / sự cho phép", tick: false },
+  { en: "get home /ɡet həʊm/", vn: "về nhà", tick: false },
+  { en: "get lost /ɡet lɒst/", vn: "bị lạc đường; (đuổi ai đó) biến đi", tick: false },
+  { en: "get nowhere /ɡet ˈnəʊwer/", vn: "không đi đến đâu/không có tiến triển", tick: false },
+
+  { en: "get ready /ɡet ˈredi/", vn: "chuẩn bị sẵn sàng", tick: false },
+  { en: "get results /ɡet rɪˈzʌlts/", vn: "đạt được kết quả", tick: false },
+  { en: "get someone’s attention", vn: "thu hút sự chú ý của ai", tick: false },
+  { en: "get the impression (that)", vn: "có ấn tượng/cảm giác rằng", tick: false },
+  { en: "get the message /ɡet ðə ˈmesɪdʒ/", vn: "hiểu ra vấn đề/thông điệp (thường là ngầm ý)", tick: false },
+
+  { en: "get the sack /ɡet ðə sæk/", vn: "bị sa thải (đuổi việc)", tick: false },
+  { en: "get wet /ɡet wet/", vn: "bị ướt", tick: false },
+  { en: "get worse / better", vn: "trở nên tệ hơn / tốt hơn", tick: false },
+  { en: "get the idea /ɡet ðə aɪˈdɪə/", vn: "nắm bắt được ý tưởng/đại ý", tick: false },
+  { en: "get to know sb", vn: "làm quen/tìm hiểu về ai đó", tick: false },
+  { en: "get away from it all", vn: "đi xa để nghỉ ngơi/thoát khỏi cuộc sống áp lực", tick: false }
+  ],
+
+  6: [
+  { en: "give (sb) trouble /ɡɪv ˈtrʌbl/", vn: "gây rắc rối/phiền hà cho ai", tick: false },
+  { en: "give (someone) credit (for something)", vn: "công nhận/khen ngợi ai vì điều gì", tick: false },
+  { en: "give (up) one’s seat /ɡɪv ʌp siːt/", vn: "nhường chỗ của mình (trên xe buýt, tàu...)", tick: false },
+  { en: "give a chance /ɡɪv ə tʃɑːns/", vn: "cho một cơ hội", tick: false },
+
+  { en: "give a concert / performance /ɡɪv ə ˈkənsərt/", vn: "biểu diễn ca nhạc / trình diễn", tick: false },
+  { en: "give a cry /ɡɪv ə kraɪ/", vn: "tiếng hét lên/kêu lên", tick: false },
+  { en: "give a description /ɡɪv ə dɪˈskrɪpʃn/", vn: "đưa ra lời mô tả", tick: false },
+  { en: "give a lecture / speech", vn: "thuyết trình / đọc diễn văn", tick: false },
+
+  { en: "give advice / an example / an explanation", vn: "đưa ra lời khuyên / ví dụ / lời giải thích", tick: false },
+  { en: "give an opinion / idea", vn: "đưa ra quan điểm / ý tưởng", tick: false },
+  { en: "give birth to someone /ɡɪv bɜːrθ/", vn: "sinh ra ai đó", tick: false },
+  { en: "give evidence /ɡɪv ˈevɪdəns/", vn: "đưa ra bằng chứng", tick: false },
+
+  { en: "give hope to someone /ɡɪv həʊp/", vn: "gieo hy vọng cho ai", tick: false },
+  { en: "give information /ɡɪv ˌɪnfərˈmeɪʃn/", vn: "cung cấp thông tin", tick: false },
+  { en: "give it a try / go /ɡɪv ɪt ə traɪ/", vn: "thử làm cái gì đó", tick: false },
+  { en: "give lessons /ɡɪv ˈlesnz/", vn: "dạy học / đưa ra bài học", tick: false },
+
+  { en: "give (sb) notice /ɡɪv ˈnəʊtɪs/", vn: "thông báo (thường là nghỉ việc) cho ai", tick: false },
+  { en: "give priority to sth/sb /praɪˈɔːrəti/", vn: "ưu tiên cho cái gì/ai", tick: false },
+  { en: "give rise to /ɡɪv raɪz tuː/", vn: "gây ra/dẫn đến (thường là điều tiêu cực)", tick: false },
+  { en: "give sb an appetite /ˈæpɪtaɪt/", vn: "làm cho ai đó thấy ngon miệng/thèm ăn", tick: false },
+
+  { en: "give someone a call / ring", vn: "gọi điện thoại cho ai", tick: false },
+  { en: "give someone a hand /ɡɪv ə hænd/", vn: "giúp đỡ ai một tay", tick: false },
+  { en: "give someone a hug / kiss", vn: "ôm / hôn ai đó", tick: false },
+  { en: "give someone a lift / ride", vn: "cho ai đó đi nhờ xe", tick: false },
+
+  { en: "give someone permission /pərˈmɪʃn/", vn: "cho phép ai", tick: false },
+  { en: "give someone the choice / opportunity", vn: "cho ai lựa chọn / cơ hội", tick: false },
+  { en: "give the impression (that)", vn: "tạo ấn tượng/cảm giác rằng", tick: false },
+  { en: "give thought to something /ɡɪv θɔːt/", vn: "suy nghĩ kỹ về điều gì", tick: false },
+  { en: "give way to /ɡɪv weɪ tuː/", vn: "nhường đường cho / bị thay thế bởi", tick: false },
+  { en: "give sb a suspicious look /səˈspɪʃəs/", vn: "nhìn ai đó với ánh mắt nghi ngờ", tick: false }
+],
+
+  7: [
+  { en: "go abroad / overseas /ɡəʊ əˈbrɔːd/", vn: "đi nước ngoài", tick: false },
+  { en: "go astray /ɡəʊ əˈstreɪ/", vn: "đi chệch hướng; bị thất lạc", tick: false },
+  { en: "go bad /ɡəʊ bæd/", vn: "bị hỏng (thức ăn); ôi thiu", tick: false },
+  { en: "go bald /ɡəʊ bɔːld/", vn: "bị hói đầu", tick: false },
+  { en: "go bankrupt /ɡəʊ ˈbæŋkrʌpt/", vn: "phá sản", tick: false },
+
+  { en: "go camping / fishing / sailing / swimming", vn: "đi cắm trại / câu cá / chèo thuyền / đi bơi", tick: false },
+  { en: "go cheap /ɡəʊ tʃiːp/", vn: "bán rẻ/bán hạ giá", tick: false },
+  { en: "go crazy / insane /ɡəʊ ˈkreɪzi/", vn: "phát điên", tick: false },
+  { en: "go deaf /ɡəʊ def/", vn: "bị điếc", tick: false },
+  { en: "go free /ɡəʊ friː/", vn: "được tự do/được thả tự do", tick: false },
+
+  { en: "go green /ɡəʊ ɡriːn/", vn: "sống xanh; bảo vệ môi trường", tick: false },
+  { en: "go grey /ɡəʊ ɡreɪ/", vn: "bị bạc tóc", tick: false },
+  { en: "go missing /ɡəʊ ˈmɪsɪŋ/", vn: "mất tích; bị thất lạc", tick: false },
+  { en: "go on a date / picnic / holiday", vn: "đi hẹn hò / đi dã ngoại / đi nghỉ lễ", tick: false },
+  { en: "go on foot /ɡəʊ ɒn fʊt/", vn: "đi bộ", tick: false },
+
+  { en: "go online /ɡəʊ ˌɒnˈlaɪn/", vn: "lên mạng/truy cập trực tuyến", tick: false },
+  { en: "go out of business", vn: "phá sản/ngừng kinh doanh", tick: false },
+  { en: "go out of fashion", vn: "lỗi mốt; không còn hợp thời", tick: false },
+  { en: "go quiet /ɡəʊ ˈkwaɪət/", vn: "trở nên im lặng", tick: false },
+  { en: "go shopping /ɡəʊ ˈʃɒpɪŋ/", vn: "đi mua sắm", tick: false },
+
+  { en: "go smoothly /ɡəʊ ˈsmuːðli/", vn: "diễn ra suôn sẻ", tick: false },
+  { en: "go to bed / school / university", vn: "đi ngủ / đi học / học đại học", tick: false },
+  { en: "go to the beach / movie", vn: "đi biển / đi xem phim", tick: false },
+  { en: "go to the/great expense", vn: "tốn nhiều chi phí", tick: false },
+  { en: "go to war / waste", vn: "đi tham chiến / bị lãng phí", tick: false },
+  { en: "go wrong /ɡəʊ rɒŋ/", vn: "xảy ra sai sót/có vấn đề", tick: false }
+],
+
+  8: [
+  { en: "have (got) a cold /hæv ə kəʊld/", vn: "bị cảm lạnh", tick: false },
+  { en: "have a (good) head for sth", vn: "có khả năng thiên bẩm/giỏi về cái gì", tick: false },
+  { en: "have a baby /hæv ə ˈbeɪbi/", vn: "sinh con", tick: false },
+  { en: "have a bearing on sth", vn: "có ảnh hưởng/liên quan đến cái gì", tick: false },
+
+  { en: "have a conversation / chat (with sb)", vn: "trò chuyện/tán gẫu với ai", tick: false },
+  { en: "have a dance / swim / wash", vn: "nhảy múa / đi bơi / tắm rửa", tick: false },
+  { en: "have a difference of opinion", vn: "có sự khác biệt về quan điểm", tick: false },
+  { en: "have a discussion with sb about sth", vn: "thảo luận với ai về việc gì", tick: false },
+
+  { en: "have a down on sb /hæv ə daʊn/", vn: "có ác cảm/thù ghét ai", tick: false },
+  { en: "have a dream / nightmare", vn: "mơ / gặp ác mộng", tick: false },
+  { en: "have a drink of sth / fall", vn: "uống cái gì đó / bị ngã", tick: false },
+  { en: "have a feeling /hæv ə ˈfiːlɪŋ/", vn: "có cảm giác rằng", tick: false },
+  { en: "have a flick through sth", vn: "đọc lướt qua/đọc qua loa cái gì", tick: false },
+
+  { en: "have a genius for sth / doing sth", vn: "có tài năng thiên tài về việc gì", tick: false },
+  { en: "have a go / try / bash (at sth)", vn: "thử làm việc gì đó", tick: false },
+  { en: "have a go at sb /hæv ə ɡəʊ/", vn: "chỉ trích/mắng mỏ ai đó", tick: false },
+  { en: "have a good mind to", vn: "thực sự muốn làm gì (thường là vì bực mình)", tick: false },
+  { en: "have a horror of sth", vn: "cực kỳ sợ hãi cái gì", tick: false },
+
+  { en: "have a look (at sth) / nap / rest / break", vn: "nhìn / chợp mắt / nghỉ ngơi", tick: false },
+  { en: "have a party / picnic /ɡet ə ˈpɑːrti/", vn: "tổ chức tiệc / đi dã ngoại", tick: false },
+  { en: "have a relationship with sb", vn: "có mối quan hệ với ai", tick: false },
+  { en: "have a say in sth /hæv ə seɪ/", vn: "có tiếng nói/quyền quyết định trong việc gì", tick: false },
+  { en: "have a word with sb", vn: "nói chuyện riêng/trao đổi với ai", tick: false },
+
+  { en: "have an accident / argument / row", vn: "bị tai nạn / cãi lộn", tick: false },
+  { en: "have an impact on / upon sb/sth", vn: "có tác động mạnh mẽ đến ai/cái gì", tick: false },
+  { en: "have an issue with sb/sth", vn: "có vấn đề/mâu thuẫn với ai/cái gì", tick: false },
+  { en: "have an operation on sth", vn: "phẫu thuật cái gì", tick: false },
+  { en: "have difficulty (in) doing sth", vn: "gặp khó khăn khi làm gì", tick: false },
+
+  { en: "have fun / a blast / a good time", vn: "vui vẻ / có một thời gian tuyệt vời", tick: false },
+  { en: "have great / little / no sympathy for sth", vn: "có nhiều / ít / không có sự cảm thông cho", tick: false },
+  { en: "have sth in mind / bear / keep in mind", vn: "ghi nhớ/đang cân nhắc điều gì", tick: false },
+  { en: "have the nerve to do sth", vn: "có gan/đủ can đảm (hoặc trơ trẽn) để làm gì", tick: false }
+],
+
+  9: [
+  { en: "keep a diary /kiːp ə ˈdaɪəri/", vn: "viết nhật ký (duy trì việc viết)", tick: false },
+  { en: "keep a lookout for /kiːp ə ˈlaʊkaʊt/", vn: "cảnh giác/để mắt canh chừng ai/cái gì", tick: false },
+  { en: "keep a promise /kiːp ə ˈprɒmɪs/", vn: "giữ lời hứa", tick: false },
+  { en: "keep a record /kiːp ə ˈrekɔːrd/", vn: "ghi chép lại/lưu hồ sơ", tick: false },
+  { en: "keep a secret /kiːp ə ˈsiːkrət/", vn: "giữ bí mật", tick: false },
+
+  { en: "keep an appointment /əˈpɔɪntmənt/", vn: "đúng hẹn/giữ cuộc hẹn", tick: false },
+  { en: "keep an eye on /kiːp ən aɪ/", vn: "để mắt đến/trông chừng", tick: false },
+  { en: "keep calm / control /kiːp kɑːm/", vn: "giữ bình tĩnh / giữ kiểm soát", tick: false },
+  { en: "keep fit / warm /kiːp fɪt/", vn: "giữ cơ thể cân đối / giữ ấm", tick: false },
+  { en: "keep going / moving /kiːp ˈɡəʊɪŋ/", vn: "tiếp tục đi/tiếp tục làm gì", tick: false },
+
+  { en: "keep in mind / bear in mind", vn: "ghi nhớ/lưu ý điều gì", tick: false },
+  { en: "keep in touch /kiːp ɪn tʌtʃ/", vn: "giữ liên lạc", tick: false },
+  { en: "keep pace with /kiːp peɪs wɪð/", vn: "theo kịp/bắt kịp tốc độ với", tick: false },
+  { en: "keep quiet / silent /kiːp ˈkwaɪət/", vn: "giữ im lặng", tick: false },
+  { en: "keep sb alive / amused", vn: "giữ cho ai đó còn sống / làm cho ai đó giải trí", tick: false },
+
+  { en: "keep sb posted /kiːp pəʊstɪd/", vn: "cập nhật tình hình cho ai kịp thời", tick: false },
+  { en: "keep someone company", vn: "ở bên cạnh bầu bạn với ai", tick: false },
+  { en: "keep someone's place", vn: "giữ chỗ cho ai đó", tick: false },
+  { en: "keep something safe /kiːp seɪf/", vn: "giữ cho cái gì được an toàn", tick: false },
+  { en: "keep sth to oneself", vn: "giữ riêng cho mình/không tiết lộ cho ai", tick: false },
+
+  { en: "keep tabs on /kiːp tæbz ɒn/", vn: "theo dõi/giám sát chặt chẽ ai/cái gì", tick: false },
+  { en: "keep the change /kiːp ðə tʃeɪndʒ/", vn: "cứ giữ lấy tiền lẻ/tiền thừa", tick: false },
+  { en: "keep time / track", vn: "giữ đúng giờ (nhạc) / theo dõi tiến độ", tick: false },
+  { en: "keep your balance / distance", vn: "giữ thăng bằng / giữ khoảng cách", tick: false },
+  { en: "keep/hold someone/something in check", vn: "kiểm soát/ngăn chặn cái gì đó không cho phát triển", tick: false }
+],
+
+  10: [
+  { en: "lend a (helping) hand /lend ə hænd/", vn: "giúp đỡ một tay; hỗ trợ", tick: false },
+  { en: "lend (your) support / assistance /lend/", vn: "hỗ trợ; giúp đỡ (ai/việc gì)", tick: false },
+  { en: "lend an air of /lend ən er əv/", vn: "mang lại một vẻ/vẻ ngoài (sang trọng, bí ẩn...)", tick: false },
+  { en: "lend an ear (to sb/sth) /lend ən ɪər/", vn: "lắng nghe (một cách chân thành/thấu hiểu)", tick: false },
+
+  { en: "lend colour to sth /lend ˈkʌlər/", vn: "làm cho cái gì thêm thuyết phục (thường là một lời nói dối)", tick: false },
+  { en: "lend credence / plausibility / weight to sth", vn: "làm cho cái gì đó trở nên đáng tin/thuyết phục hơn", tick: false },
+  { en: "lend itself to something", vn: "phù hợp với cái gì/thích hợp cho việc gì", tick: false },
+  { en: "lend money /lend ˈmʌni/", vn: "cho vay tiền", tick: false },
+
+  { en: "lend one’s support / assistance (to sth)", vn: "đóng góp sự ủng hộ/sự hỗ trợ (cho một mục tiêu)", tick: false },
+  { en: "lend to sb/sth /lend tuː/", vn: "cho ai vay cái gì / đóng góp đặc tính cho cái gì", tick: false },
+  { en: "lend your name to something", vn: "dùng tên tuổi/uy tín của mình để ủng hộ cái gì", tick: false }
+],
+
+  11: [
+  { en: "lose one’s temper /luːz wʌnz ˈtempər/", vn: "mất bình tĩnh; nổi nóng/giận dữ", tick: false },
+  { en: "lose one's life /luːz wʌnz laɪf/", vn: "mất mạng; hy sinh", tick: false },
+  { en: "lose one's job /luːz wʌnz dʒɒb/", vn: "mất việc làm; thất nghiệp", tick: false },
+  { en: "lose control of something /kənˈtrəʊl/", vn: "mất kiểm soát đối với cái gì", tick: false },
+
+  { en: "lose weight /luːz weɪt/", vn: "giảm cân", tick: false },
+  { en: "lose (all) interest (in) /ˈɪntrəst/", vn: "mất đi (tất cả) sự hứng thú (với cái gì)", tick: false },
+  { en: "lose a game /luːz ə ɡeɪm/", vn: "thua một trận đấu/trò chơi", tick: false },
+
+  { en: "lose sight of sth/sb /luːz saɪt əv/", vn: "mất dấu; không còn nhìn thấy; quên đi mục tiêu cốt lõi", tick: false },
+  { en: "lose face /luːz feɪs/", vn: "mất mặt; mất uy tín/thể diện", tick: false }
+],
+  12: [
+  { en: "make (both) ends meet /meɪk endz miːt/", vn: "xoay sở để kiếm sống/đủ tiền trang trải", tick: false },
+  { en: "make a choice / decision / judgement", vn: "đưa ra lựa chọn / quyết định / phán xét", tick: false },
+  { en: "make a commitment to sth/doing sth", vn: "cam kết làm điều gì", tick: false },
+  { en: "make a comparison with sb/sth", vn: "so sánh với ai/cái gì", tick: false },
+  { en: "make a complaint /kəmˈpleɪnt/", vn: "phàn nàn/khiếu nại", tick: false },
+
+  { en: "make a contribution to sth /ˌkɒntrɪˈbjuːʃn/", vn: "đóng góp vào cái gì", tick: false },
+  { en: "make a difference / make no difference", vn: "tạo ra sự khác biệt / không có gì khác biệt", tick: false },
+  { en: "make a distinction /dɪˈstɪŋkʃn/", vn: "tạo ra sự phân biệt/khác biệt giữa hai thứ", tick: false },
+  { en: "make a donation /dəʊˈneɪʃn/", vn: "quyên góp/tặng quà từ thiện", tick: false },
+  { en: "make a fortune / make a living", vn: "kiếm được cả gia tài / kiếm sống", tick: false },
+
+  { en: "make a fuss /meɪk ə fʌs/", vn: "làm ầm ĩ lên/chuyện bé xé ra to", tick: false },
+  { en: "make a good impression on sb", vn: "tạo ấn tượng tốt với ai", tick: false },
+  { en: "make a list of sth / make a mess (of)", vn: "lập danh sách / làm rối tung lên", tick: false },
+  { en: "make a mistake / promise / wish", vn: "mắc lỗi / hứa / ước", tick: false },
+  { en: "make a recovery / remark / speech", vn: "hồi phục / đưa ra lời nhận xét / đọc diễn văn", tick: false },
+
+  { en: "make allowances for /əˈlaʊənsɪz/", vn: "chiếu cố/xem xét đến hoàn cảnh của ai", tick: false },
+  { en: "make amends (to sb for sth)", vn: "đền bù/chuộc lỗi cho ai về việc gì", tick: false },
+  { en: "make an announcement /əˈnaʊnsmənt/", vn: "đưa ra một thông báo", tick: false },
+  { en: "make an appointment with sb", vn: "hẹn gặp ai", tick: false },
+  { en: "make an effort / attempt to do sth", vn: "nỗ lực / cố gắng làm gì", tick: false },
+
+  { en: "make an exception / excuse / offer", vn: "ngoại lệ / đưa ra lý do bào chữa / đưa ra đề nghị", tick: false },
+  { en: "make arrangements for sb/sth", vn: "sắp xếp cho ai/cái gì", tick: false },
+  { en: "make believe /meɪk bɪˈliːv/", vn: "giả vờ/tin rằng (điều không có thật)", tick: false },
+  { en: "make criticism / discovery", vn: "đưa ra lời chỉ trích / khám phá ra", tick: false },
+  { en: "make friends with sb / jokes about sth", vn: "kết bạn với ai / đùa cợt về cái gì", tick: false },
+
+  { en: "make improvements / innovation to sth", vn: "cải thiện / đổi mới cái gì", tick: false },
+  { en: "make noise / plans / prediction", vn: "làm ồn / lập kế hoạch / đưa ra dự đoán", tick: false },
+  { en: "make one's way / walk / travel", vn: "tìm đường đi / di chuyển đến", tick: false },
+  { en: "make presentation / progress", vn: "thuyết trình / tiến bộ", tick: false },
+  { en: "make room / space / way for", vn: "nhường chỗ/dọn chỗ cho ai/cái gì", tick: false },
+
+  { en: "make sense of /meɪk sens əv/", vn: "hiểu được/nắm bắt được cái gì", tick: false },
+  { en: "make sth clear to sb", vn: "làm cho ai đó hiểu rõ điều gì", tick: false },
+  { en: "make up one’s mind / change one's mind", vn: "quyết định / thay đổi quyết định", tick: false },
+  { en: "make use of /meɪk juːs əv/", vn: "tận dụng/sử dụng cái gì", tick: false }
+],
+
+  13: [
+  { en: "meet a challenge / goal / target", vn: "đáp ứng thử thách / đạt được mục tiêu", tick: false },
+  { en: "meet a cost / expense /miːt ə kɒst/", vn: "chi trả/đáp ứng được chi phí", tick: false },
+  { en: "meet a deadline /miːt ə ˈdedlaɪn/", vn: "hoàn thành đúng hạn", tick: false },
+  { en: "meet a debt /miːt ə det/", vn: "trả hết nợ", tick: false },
+
+  { en: "meet conditions / requirements /miːt/", vn: "đáp ứng các điều kiện / yêu cầu", tick: false },
+  { en: "meet somebody’s eye(s) /miːt aɪz/", vn: "nhìn thẳng vào mắt ai đó", tick: false },
+  { en: "meet someone by chance /miːt baɪ tʃɑːns/", vn: "tình cờ gặp ai đó", tick: false },
+  { en: "meet someone halfway /miːt ˌhɑːfˈweɪ/", vn: "thỏa hiệp/nhượng bộ với ai đó", tick: false },
+
+  { en: "meet someone's expectation /ˌekspekˈteɪʃn/", vn: "đáp ứng kỳ vọng của ai", tick: false },
+  { en: "meet the criteria /miːt ðə kraɪˈtɪəriə/", vn: "đạt được/thỏa mãn các tiêu chí", tick: false },
+  { en: "meet the needs / demands /miːt ðə niːdz/", vn: "đáp ứng nhu cầu / yêu cầu", tick: false },
+  { en: "meet the standard /miːt ðə ˈstændərd/", vn: "đạt tiêu chuẩn", tick: false },
+
+  { en: "meet your death / end /miːt jɔːr deθ/", vn: "tử vong/qua đời", tick: false },
+  { en: "meet your match (in somebody)", vn: "gặp được đối thủ xứng tầm (ở ai đó)", tick: false }
+],
+  14: [
+  { en: "miss a chance / opportunity /mɪs ə tʃɑːns/", vn: "bỏ lỡ một cơ hội", tick: false },
+  { en: "miss a turn /mɪs ə tɜːrn/", vn: "mất lượt (trong trò chơi/vòng đấu)", tick: false },
+  { en: "miss the boat /mɪs ðə bəʊt/", vn: "bỏ lỡ cơ hội quý giá (vì chậm chân)", tick: false },
+  { en: "miss the deadline /mɪs ðə ˈdedlaɪn/", vn: "trễ hạn/không kịp thời hạn", tick: false },
+
+  { en: "miss the mark /mɪs ðə mɑːrk/", vn: "không đạt mục đích; dự đoán sai; thất bại", tick: false },
+  { en: "miss the plane / train / bus /mɪs/", vn: "lỡ chuyến bay / tàu / xe buýt", tick: false },
+  { en: "miss the point /mɪs ðə pɔɪnt/", vn: "không hiểu vấn đề/điểm cốt lõi", tick: false },
+  { en: "miss your guess /mɪs jɔːr ɡes/", vn: "đoán sai; nhầm lẫn", tick: false }
+],
+  15: [
+  { en: "pay (the) rent /peɪ rent/", vn: "trả tiền thuê nhà", tick: false },
+  { en: "pay a bill /peɪ ə bɪl/", vn: "thanh toán hóa đơn", tick: false },
+  { en: "pay a debt /peɪ ə det/", vn: "trả nợ", tick: false },
+  { en: "pay a deposit /peɪ ə dɪˈpɒzɪt/", vn: "trả tiền đặt cọc", tick: false },
+  { en: "pay a fine /peɪ ə faɪn/", vn: "nộp tiền phạt", tick: false },
+
+  { en: "pay attention to sb/sth /peɪ əˈtenʃn/", vn: "chú ý đến ai/cái gì", tick: false },
+  { en: "pay heed (to sth) /peɪ hiːd/", vn: "chú ý/lưu tâm đến điều gì (trang trọng)", tick: false },
+  { en: "pay cash /peɪ kæʃ/", vn: "trả bằng tiền mặt", tick: false },
+  { en: "pay dearly /peɪ ˈdɪərli/", vn: "trả giá đắt (cho một sai lầm)", tick: false },
+
+  { en: "pay homage to sb /ˈhɒmɪdʒ/", vn: "tỏ lòng thành kính/tôn kính ai", tick: false },
+  { en: "pay tribute to sb/sth /ˈtrɪbjuːt/", vn: "bày tỏ lòng biết ơn/ca ngợi/tưởng nhớ", tick: false },
+  { en: "pay your respects /rɪˈspekts/", vn: "đến chào/thăm hỏi ai (hoặc viếng người mất)", tick: false },
+
+  { en: "pay interest /peɪ ˈɪntrəst/", vn: "trả tiền lãi", tick: false },
+  { en: "pay one's dues /peɪ djuːz/", vn: "trả phí hội viên; (nghĩa bóng) nỗ lực để có thành công", tick: false },
+  { en: "pay one’s way", vn: "tự chi trả mọi chi phí cho bản thân", tick: false },
+  { en: "pay tax /peɪ tæks/", vn: "nộp thuế", tick: false },
+
+  { en: "pay someone a compliment /ˈkɒmplɪmənt/", vn: "khen ngợi ai đó", tick: false },
+  { en: "pay someone a visit / call", vn: "ghé thăm ai đó", tick: false },
+  { en: "pay the price for something", vn: "trả giá cho điều gì", tick: false },
+  { en: "pay through the nose", vn: "trả giá quá đắt (cắt cổ) cho một thứ gì đó", tick: false }
+],
+  16: [
+  { en: "put (something) into words /pʊt ˈɪntə wɜːrdz/", vn: "diễn đạt điều gì thành lời", tick: false },
+  { en: "put (sth) (down) on paper", vn: "ghi chép cái gì ra giấy/viết ra", tick: false },
+  { en: "put a bet on sth /pʊt ə bet/", vn: "đặt cược vào cái gì", tick: false },
+  { en: "put a damper on /pʊt ə ˈdæmpər/", vn: "làm mất vui; làm nản lòng/mất hứng", tick: false },
+  { en: "put a price/value/figure on something", vn: "định giá/đưa ra con số cụ thể cho cái gì", tick: false },
+
+  { en: "put a spell / curse on sb", vn: "yểm bùa / nguyền rủa ai đó", tick: false },
+  { en: "put a stop (an end) to something", vn: "chấm dứt/ngăn chặn cái gì", tick: false },
+  { en: "put a tax on sth /pʊt ə tæks/", vn: "đánh thuế vào cái gì", tick: false },
+  { en: "put emphasis on /ˈemfəsɪs/", vn: "nhấn mạnh vào cái gì", tick: false },
+  { en: "put one's faith / trust / confidence in sb/sth", vn: "đặt niềm tin/sự tin tưởng vào ai/cái gì", tick: false },
+
+  { en: "put oneself in sb’s place/position/shoes", vn: "đặt mình vào hoàn cảnh/vị trí của người khác", tick: false },
+  { en: "put pressure on someone / stress", vn: "áp đặt áp lực / căng thẳng lên ai", tick: false },
+  { en: "put sb in a difficult/awkward position", vn: "đưa ai vào thế khó/thế bí/khó xử", tick: false },
+  { en: "put sb in his/her place", vn: "dạy cho ai một bài học/làm cho ai bớt kiêu ngạo", tick: false },
+
+  { en: "put sb on the spot /pʊt ɒn ðə spɒt/", vn: "đưa ai vào thế phải trả lời/quyết định ngay (gây khó xử)", tick: false },
+  { en: "put sb/sth on the map", vn: "làm cho ai/cái gì trở nên nổi tiếng/được biết đến rộng rãi", tick: false },
+  { en: "put sb/sth to shame", vn: "làm cho ai/cái gì phải xấu hổ (vì mình làm tốt hơn hẳn)", tick: false },
+  { en: "put someone at risk /pʊt æt rɪsk/", vn: "đặt ai đó vào tình thế nguy hiểm/rủi ro", tick: false },
+
+  { en: "put something into practice /ˈpræktɪs/", vn: "đưa cái gì vào thực tế/thực hành", tick: false },
+  { en: "put sth into perspective /pərˈspektɪv/", vn: "đánh giá đúng bản chất sự việc/nhìn nhận khách quan", tick: false },
+  { en: "put the blame on someone", vn: "đổ lỗi cho ai đó", tick: false },
+  { en: "put things right", vn: "sửa chữa sai lầm/làm cho mọi thứ đúng đắn trở lại", tick: false },
+  { en: "put years on sb", vn: "làm cho ai đó trông già đi nhiều tuổi (vì lo lắng/vất vả)", tick: false }
+],
+  17: [
+  { en: "set a date / time /set ə deɪt/", vn: "ấn định ngày tháng / thời gian", tick: false },
+  { en: "set a deadline for something", vn: "đặt ra thời hạn chót cho việc gì", tick: false },
+  { en: "set a goal / target / challenge", vn: "đặt ra mục tiêu / chỉ tiêu / thử thách", tick: false },
+  { en: "set a good/bad example to sb", vn: "nêu gương tốt / xấu cho ai đó", tick: false },
+  { en: "set a limit on something", vn: "đưa ra giới hạn cho cái gì", tick: false },
+
+  { en: "set a precedent /set ə ˈpresɪdənt/", vn: "tạo ra một tiền lệ", tick: false },
+  { en: "set a record /set ə ˈrekɔːrd/", vn: "lập một kỷ lục mới", tick: false },
+  { en: "set a trap /set ə træp/", vn: "đặt bẫy", tick: false },
+  { en: "set a trend /set ə trend/", vn: "tạo ra một xu hướng/trào lưu", tick: false },
+  { en: "set boundaries /ˈbaʊndriz/", vn: "thiết lập ranh giới (về khoảng cách hoặc ứng xử)", tick: false },
+
+  { en: "set conditions / requirements", vn: "đặt ra các điều kiện / yêu cầu", tick: false },
+  { en: "set fire to / set sth alight / ablaze", vn: "châm lửa đốt / làm cho cái gì bốc cháy", tick: false },
+  { en: "set high standards / set the tone", vn: "đặt ra tiêu chuẩn cao / tạo ra tông giọng/không khí", tick: false },
+  { en: "set sail /set seɪl/", vn: "nhổ neo ra khơi/bắt đầu chuyến đi biển", tick: false },
+  { en: "set someone/something free", vn: "trả tự do cho ai/cái gì", tick: false },
+
+  { en: "set something in motion", vn: "khởi động/bắt đầu cho một quá trình vận hành", tick: false },
+  { en: "set the agenda /əˈdʒendə/", vn: "thiết lập chương trình nghị sự/nội dung buổi họp", tick: false },
+  { en: "set the price of sth", vn: "ấn định giá cả của cái gì", tick: false },
+  { en: "set the table /set ðə ˈteɪbl/", vn: "dọn bàn ăn/sắp xếp bàn ăn", tick: false },
+  { en: "set the/one's clock /set klɒk/", vn: "chỉnh đồng hồ/cài báo thức", tick: false }
+],
+  18: [
+  { en: "take (someone's) life /teɪk laɪf/", vn: "tước đi mạng sống của ai", tick: false },
+  { en: "take a breath /teɪk ə breθ/", vn: "hít một hơi thật sâu", tick: false },
+  { en: "take a bus / train / taxi / plane", vn: "bắt xe buýt / tàu / taxi / máy bay", tick: false },
+  { en: "take a chance / risk /teɪk ə rɪsk/", vn: "nắm lấy cơ hội / chấp nhận rủi ro", tick: false },
+  { en: "take a fancy to sth/sb", vn: "bắt đầu thấy thích cái gì/ai đó", tick: false },
+
+  { en: "take a look at /teɪk ə lʊk/", vn: "nhìn qua/xem xét cái gì", tick: false },
+  { en: "take a rest / have a break", vn: "nghỉ ngơi", tick: false },
+  { en: "take a seat /teɪk ə siːt/", vn: "mời ngồi", tick: false },
+  { en: "take action(s) / measures / steps", vn: "thực hiện các hành động / biện pháp / bước đi", tick: false },
+  { en: "take advantage of / make use of", vn: "tận dụng / lợi dụng cái gì", tick: false },
+
+  { en: "take ages /teɪk ˈeɪdʒɪz/", vn: "mất rất nhiều thời gian", tick: false },
+  { en: "take an approach /teɪk ən əˈprəʊtʃ/", vn: "tiếp cận theo một cách nào đó", tick: false },
+  { en: "take an interest in sth", vn: "bắt đầu quan tâm đến cái gì", tick: false },
+  { en: "take care / take care of sb/sth", vn: "bảo trọng / chăm sóc ai/cái gì", tick: false },
+  { en: "take charge of sth /teɪk tʃɑːrdʒ/", vn: "đảm nhận/chịu trách nhiệm quản lý", tick: false },
+
+  { en: "take drugs /teɪk drʌɡz/", vn: "uống thuốc / sử dụng ma túy", tick: false },
+  { en: "take effect /teɪk ɪˈfekt/", vn: "có tác dụng/hiệu lực (thuốc hoặc luật lệ)", tick: false },
+  { en: "take exception to sth/sb", vn: "phản đối/bực mình về điều gì", tick: false },
+  { en: "take heart /teɪk hɑːrt/", vn: "trở nên can đảm/tự tin/vui vẻ hơn", tick: false },
+  { en: "take naps /teɪk næps/", vn: "ngủ trưa/ngủ ngắn", tick: false },
+
+  { en: "take notes / jot down", vn: "ghi chú lại", tick: false },
+  { en: "take offence at sth /teɪk əˈfens/", vn: "cảm thấy bị xúc phạm/mất lòng", tick: false },
+  { en: "take one’s advice /teɪk ædˈvaɪs/", vn: "nghe theo lời khuyên của ai", tick: false },
+  { en: "take photos of sb/sth /teɪk ˈfəʊtəʊz/", vn: "chụp ảnh ai/cái gì", tick: false },
+  { en: "take precautions /prɪˈkɔːʃnz/", vn: "thực hiện các biện pháp phòng ngừa", tick: false },
+
+  { en: "take prescription medicine", vn: "uống thuốc theo đơn", tick: false },
+  { en: "take pride in sb/sth /teɪk praɪd/", vn: "tự hào về ai/cái gì", tick: false },
+  { en: "take somebody’s temperature", vn: "đo nhiệt độ/cặp sốt cho ai", tick: false },
+  { en: "take someone's hand /teɪk hænd/", vn: "nắm tay ai", tick: false },
+  { en: "take sth for granted /teɪk ˈɡræntɪd/", vn: "coi điều gì là hiển nhiên (nên không quý trọng)", tick: false },
+
+  { en: "take time off /teɪk taɪm ɔːf/", vn: "nghỉ phép/nghỉ làm một thời gian", tick: false },
+  { en: "take/assume responsibility for sth", vn: "chịu trách nhiệm cho việc gì", tick: false },
+  { en: "take a course /teɪk ə kɔːrs/", vn: "theo học một khóa học", tick: false },
+  { en: "take priority over sth /praɪˈɔːrəti/", vn: "có quyền ưu tiên hơn cái gì", tick: false },
+  { en: "take the occasion to do sth", vn: "nhân cơ hội này để làm gì", tick: false }
+],
+
+};
+
+let currList = 1, listCopy=[], index=0;
+
+let totalWords = 0;
+let knownCount = 0;
+
+/********** LOAD LIST **********/
+function loadList(){
+  currList = document.getElementById("wordList").value;
+  listCopy = [...data[currList]];
+  totalWords = listCopy.length;
+  knownCount = 0;
+
+  updateCounter();
+  renderWords();
+  index=-1;
+  nextWord();
+  loadExercises();
+}
+
+function updateCounter(){
+  document.getElementById("progressCounter").innerText =
+    `Đã biết ${knownCount} / ${totalWords}`;
+}
+
+
+document.getElementById("wordList").onchange = loadList;
+loadList();
+
+/********** RENDER & SORT **********/
+function renderWords(){
+  const box=document.getElementById("wordContainer");
+  box.innerHTML="";
+
+  let sorted=[...data[currList]].sort((a,b)=>b.tick - a.tick);
+
+  sorted.forEach(item=>{
+    let realIndex = data[currList].indexOf(item);
+    box.innerHTML+=`
+      <div class="word-row">
+        <span>${item.en}: ${item.vn}</span>
+        <input type="checkbox" ${item.tick?"checked":""} onclick="toggleTick(${realIndex})">
+      </div>`;
+  });
+}
+
+/********** TICK UPDATE **********/
+function toggleTick(realIndex){
+  data[currList][realIndex].tick = !data[currList][realIndex].tick;
+  renderWords();
+}
+
+/********** REVIEW **********/
+function nextWord(){
+  document.getElementById("answer").innerHTML="";
+  if(listCopy.length===0){
+    document.getElementById("vietWord").innerHTML="🎉 Bạn đã học xong hết!";
+    return;
+  }
+  index=Math.floor(Math.random()*listCopy.length);
+  document.getElementById("vietWord").innerHTML=listCopy[index].vn;
+}
+
+function know(){
+  firework();
+  knownCount++;
+  listCopy.splice(index,1);
+  updateCounter();
+  nextWord();
+}
+
+function dontKnow(){
+  document.getElementById("answer").innerHTML=listCopy[index].en;
+}
+
+/********** EXERCISES **********/
+function loadExercises(){
+  const box=document.getElementById("exercise");
+  box.innerHTML="";
+  exercises[currList].forEach((item,i)=>{
+    box.innerHTML+=`
+    <div style="margin:10px 0;">
+      ${i+1}. ${item.q}
+      <input id="ex${i}">
+      <button onclick="checkEx(${i})">Check</button>
+      <span id="res${i}" class="result"></span>
+    </div>`;
+  });
+}
+
+function checkEx(i){
+  const user = document.getElementById("ex"+i).value.trim().toLowerCase();
+  const ans = exercises[currList][i].a.toLowerCase();
+  const box = document.getElementById("res"+i);
+
+  if(user === ans) {
+    box.innerHTML = "✔ Correct";
+    box.style.color = "#28a745"; // chữ Correct màu xanh lá
+    firework(); // gọi pháo hoa
+  } else {
+    box.innerHTML = "✘ " + exercises[currList][i].a;
+    box.style.color = "#D02752"; // chữ sai màu đỏ
+  }
+}
+
+/********** FIREWORK **********/
+function firework(){
+  for(let i=0;i<25;i++){
+    const c=document.createElement("div");
+    c.className="confetti";
+    c.style.setProperty("--x",(Math.random()-.5)*600+"px");
+    c.style.setProperty("--y",(Math.random()-.5)*600+"px");
+    c.style.backgroundColor=`hsl(${Math.random()*360},90%,60%)`;
+    document.body.appendChild(c);
+    setTimeout(()=>c.remove(),900);
+  }
+}
+</script>
+
+</body>
+</html>
